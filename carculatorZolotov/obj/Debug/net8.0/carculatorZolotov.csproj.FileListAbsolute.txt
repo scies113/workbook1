@@ -1,0 +1,45 @@
+C:\Users\bigge\source\repos\carculatorZolotov\carculatorZolotov\bin\Debug\net8.0\carculatorZolotov.exe
+C:\Users\bigge\source\repos\carculatorZolotov\carculatorZolotov\bin\Debug\net8.0\carculatorZolotov.deps.json
+C:\Users\bigge\source\repos\carculatorZolotov\carculatorZolotov\bin\Debug\net8.0\carculatorZolotov.runtimeconfig.json
+C:\Users\bigge\source\repos\carculatorZolotov\carculatorZolotov\bin\Debug\net8.0\carculatorZolotov.dll
+C:\Users\bigge\source\repos\carculatorZolotov\carculatorZolotov\bin\Debug\net8.0\carculatorZolotov.pdb
+C:\Users\bigge\source\repos\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bigge\source\repos\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.AssemblyInfoInputs.cache
+C:\Users\bigge\source\repos\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.AssemblyInfo.cs
+C:\Users\bigge\source\repos\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.csproj.CoreCompileInputs.cache
+C:\Users\bigge\source\repos\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.sourcelink.json
+C:\Users\bigge\source\repos\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.dll
+C:\Users\bigge\source\repos\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\refint\carculatorZolotov.dll
+C:\Users\bigge\source\repos\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.pdb
+C:\Users\bigge\source\repos\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.genruntimeconfig.cache
+C:\Users\bigge\source\repos\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\ref\carculatorZolotov.dll
+C:\Users\bigge\OneDrive\Рабочий стол\carculatorZolotov\carculatorZolotov\bin\Debug\net8.0\carculatorZolotov.exe
+C:\Users\bigge\OneDrive\Рабочий стол\carculatorZolotov\carculatorZolotov\bin\Debug\net8.0\carculatorZolotov.deps.json
+C:\Users\bigge\OneDrive\Рабочий стол\carculatorZolotov\carculatorZolotov\bin\Debug\net8.0\carculatorZolotov.runtimeconfig.json
+C:\Users\bigge\OneDrive\Рабочий стол\carculatorZolotov\carculatorZolotov\bin\Debug\net8.0\carculatorZolotov.dll
+C:\Users\bigge\OneDrive\Рабочий стол\carculatorZolotov\carculatorZolotov\bin\Debug\net8.0\carculatorZolotov.pdb
+C:\Users\bigge\OneDrive\Рабочий стол\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bigge\OneDrive\Рабочий стол\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.AssemblyInfoInputs.cache
+C:\Users\bigge\OneDrive\Рабочий стол\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.AssemblyInfo.cs
+C:\Users\bigge\OneDrive\Рабочий стол\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.csproj.CoreCompileInputs.cache
+C:\Users\bigge\OneDrive\Рабочий стол\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.sourcelink.json
+C:\Users\bigge\OneDrive\Рабочий стол\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.dll
+C:\Users\bigge\OneDrive\Рабочий стол\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\refint\carculatorZolotov.dll
+C:\Users\bigge\OneDrive\Рабочий стол\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.pdb
+C:\Users\bigge\OneDrive\Рабочий стол\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.genruntimeconfig.cache
+C:\Users\bigge\OneDrive\Рабочий стол\carculatorZolotov\carculatorZolotov\obj\Debug\net8.0\ref\carculatorZolotov.dll
+C:\Users\bigge\OneDrive\Рабочий стол\Carculator\carculatorZolotov\bin\Debug\net8.0\carculatorZolotov.exe
+C:\Users\bigge\OneDrive\Рабочий стол\Carculator\carculatorZolotov\bin\Debug\net8.0\carculatorZolotov.deps.json
+C:\Users\bigge\OneDrive\Рабочий стол\Carculator\carculatorZolotov\bin\Debug\net8.0\carculatorZolotov.runtimeconfig.json
+C:\Users\bigge\OneDrive\Рабочий стол\Carculator\carculatorZolotov\bin\Debug\net8.0\carculatorZolotov.dll
+C:\Users\bigge\OneDrive\Рабочий стол\Carculator\carculatorZolotov\bin\Debug\net8.0\carculatorZolotov.pdb
+C:\Users\bigge\OneDrive\Рабочий стол\Carculator\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bigge\OneDrive\Рабочий стол\Carculator\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.AssemblyInfoInputs.cache
+C:\Users\bigge\OneDrive\Рабочий стол\Carculator\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.AssemblyInfo.cs
+C:\Users\bigge\OneDrive\Рабочий стол\Carculator\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.csproj.CoreCompileInputs.cache
+C:\Users\bigge\OneDrive\Рабочий стол\Carculator\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.sourcelink.json
+C:\Users\bigge\OneDrive\Рабочий стол\Carculator\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.dll
+C:\Users\bigge\OneDrive\Рабочий стол\Carculator\carculatorZolotov\obj\Debug\net8.0\refint\carculatorZolotov.dll
+C:\Users\bigge\OneDrive\Рабочий стол\Carculator\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.pdb
+C:\Users\bigge\OneDrive\Рабочий стол\Carculator\carculatorZolotov\obj\Debug\net8.0\carculatorZolotov.genruntimeconfig.cache
+C:\Users\bigge\OneDrive\Рабочий стол\Carculator\carculatorZolotov\obj\Debug\net8.0\ref\carculatorZolotov.dll
