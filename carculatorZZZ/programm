@@ -1,0 +1,98 @@
+using System;
+
+namespace calculator
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            bool continueCalculations = true;
+
+            Console.WriteLine("Добро пожаловать в калькулятор!");
+
+            while (continueCalculations)
+            {
+                try
+                {
+                    Console.WriteLine("\nВведите первое число, затем знак действия (+, -, *, /, ^, %, sqrt), затем второе число (если требуется).");
+
+                    // Ввод первого числа
+                    Console.Write("Введите первое число: ");
+                    double one = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
+
+                    // Ввод операции
+                    Console.Write("Введите знак действия: ");
+                    string operation = Console.ReadLine();
+
+                    double result = 0;
+                    bool requiresSecondNumber = true;
+
+                    // Обработка унарных операций
+                    if (operation == "sqrt")
+                    {
+                        if (one < 0)
+                            throw new ArgumentException("Ошибка: нельзя извлечь корень из отрицательного числа.");
+
+                        result = Math.Sqrt(one);
+                        requiresSecondNumber = false;
+                    }
+                    else
+                    {
+                        // Ввод второго числа для бинарных операций
+                        Console.Write("Введите второе число: ");
+                        double two = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
+
+                        // Выполнение операции
+                        switch (operation)
+                        {
+                            case "+":
+                                result = one + two;
+                                break;
+                            case "-":
+                                result = one - two;
+                                break;
+                            case "*":
+                                result = one * two;
+                                break;
+                            case "/":
+                                if (two == 0)
+                                    throw new DivideByZeroException("Ошибка: деление на ноль невозможно.");
+                                result = one / two;
+                                break;
+                            case "^":
+                                result = Math.Pow(one, two);
+                                break;
+                            case "%":
+                                result = one % two;
+                                break;
+                            default:
+                                throw new InvalidOperationException("Ошибка: неверная операция.");
+                        }
+                    }
+
+                    // Вывод результата
+                    Console.WriteLine($"Результат: {result:F4}");
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Ошибка: введено нечисловое значение.");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Ошибка: число слишком большое или слишком маленькое.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+                // Запрос на продолжение
+                Console.WriteLine("Нажмите 'q' для выхода или любую другую клавишу для продолжения.");
+                if (Console.ReadKey().KeyChar == 'q')
+                    continueCalculations = false;
+
+                Console.Clear();
+            }
+        }
+    }
+}
