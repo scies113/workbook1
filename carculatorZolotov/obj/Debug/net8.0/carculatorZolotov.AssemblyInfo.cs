@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("carculatorZolotov")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e44b324f47d4e4b241f48d0583a4bcae7dfd780f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fbc28f4d1e554d118859cc7184df8633c7656a0")]
 [assembly: System.Reflection.AssemblyProductAttribute("carculatorZolotov")]
 [assembly: System.Reflection.AssemblyTitleAttribute("carculatorZolotov")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

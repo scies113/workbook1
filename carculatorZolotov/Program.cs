@@ -1,98 +1,181 @@
 ﻿using System;
+using System.Globalization;
+using System.Linq;
 
-namespace calculator
+namespace CalculatorProgram
 {
-    internal class Program
+    class Calculator
     {
-        static void Main(string[] args)
+        private static NumberFormatInfo numberFormatInfo = new NumberFormatInfo()
+        {
+            NumberDecimalSeparator = ".",
+        };
+        
+        private double memory = 0;
+        private double currentValue = 0;
+        private static string[] memoryOperations = { "M+", "M-", "MR", "MC" };
+
+        public void Start()
         {
             bool continueCalculations = true;
-
+            
             Console.WriteLine("Добро пожаловать в калькулятор!");
+            Console.WriteLine("Доступные операции: +, -, *, /, ^, %, sqrt");
+            Console.WriteLine("Операции с памятью: M+ (добавить), M- (вычесть), MR (вспомнить), MC (очистить)");
 
             while (continueCalculations)
             {
                 try
                 {
-                    Console.WriteLine("\nВведите первое число, затем знак действия (+, -, *, /, ^, %, sqrt), затем второе число (если требуется).");
+                    Console.WriteLine("\nВведите выражение (например: 2 + 2) или команду памяти:");
+                    Console.WriteLine("Для sqrt введите: sqrt число");
+                    
+                    string input = Console.ReadLine();
+                    string[] parts = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-                    // Ввод первого числа
-                    Console.Write("Введите первое число: ");
-                    double one = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
-
-                    // Ввод операции
-                    Console.Write("Введите знак действия: ");
-                    string operation = Console.ReadLine();
-
-                    double result = 0;
-                    bool requiresSecondNumber = true;
-
-                    // Обработка унарных операций
-                    if (operation == "sqrt")
+                    if (parts.Length == 0)
                     {
-                        if (one < 0)
-                            throw new ArgumentException("Ошибка: нельзя извлечь корень из отрицательного числа.");
-
-                        result = Math.Sqrt(one);
-                        requiresSecondNumber = false;
+                        Console.WriteLine("ERROR: пустой ввод");
+                        continue;
                     }
-                    else
-                    {
-                        // Ввод второго числа для бинарных операций
-                        Console.Write("Введите второе число: ");
-                        double two = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
 
-                        // Выполнение операции
-                        switch (operation)
+                    // обработка операций с памятью
+                    if (parts.Length == 1 && memoryOperations.Contains(parts[0]))
+                    {
+                        HandleMemoryOperation(parts[0]);
+                        continue;
+                    }
+
+                    // обработка унарных операций 
+                    if (parts.Length == 2 && parts[0] == "sqrt")
+                    {
+                        if (double.TryParse(parts[1], NumberStyles.Any, numberFormatInfo, out double num))
                         {
-                            case "+":
-                                result = one + two;
-                                break;
-                            case "-":
-                                result = one - two;
-                                break;
-                            case "*":
-                                result = one * two;
-                                break;
-                            case "/":
-                                if (two == 0)
-                                    throw new DivideByZeroException("Ошибка: деление на ноль невозможно.");
-                                result = one / two;
-                                break;
-                            case "^":
-                                result = Math.Pow(one, two);
-                                break;
-                            case "%":
-                                result = one % two;
-                                break;
-                            default:
-                                throw new InvalidOperationException("Ошибка: неверная операция.");
+                            if (num < 0)
+                                throw new ArgumentException("ERROR: нельзя извлечь корень из отрицательного числа");
+
+                            currentValue = Math.Sqrt(num);
+                            Console.WriteLine($"Результат: {ToPointString(currentValue)}");
                         }
+                        else
+                        {
+                            Console.WriteLine("ERROR: неверный формат числа");
+                        }
+                        continue;
                     }
 
-                    // Вывод результата
-                    Console.WriteLine($"Результат: {result:F4}");
+                    // Обработка бинарных операций
+                    if (parts.Length == 3)
+                    {
+                        if (double.TryParse(parts[0], NumberStyles.Any, numberFormatInfo, out double firstNum) &&
+                            double.TryParse(parts[2], NumberStyles.Any, numberFormatInfo, out double secondNum))
+                        {
+                            HandleBinaryOperation(parts[1], firstNum, secondNum);
+                        }
+                        else
+                        {
+                            Console.WriteLine("ERROR: неверный формат чисел");
+                        }
+                        continue;
+                    }
+
+                    Console.WriteLine("ERROR: неверный формат ввода");
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("Ошибка: введено нечисловое значение.");
+                    Console.WriteLine("ERROR: неверный формат числа");
                 }
                 catch (OverflowException)
                 {
-                    Console.WriteLine("Ошибка: число слишком большое или слишком маленькое.");
+                    Console.WriteLine("ERROR: число слишком большое или слишком маленькое");
+                }
+                catch (DivideByZeroException)
+                {
+                    Console.WriteLine("ERROR: деление на ноль");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine($"ERROR: {ex.Message}");
                 }
 
                 // Запрос на продолжение
-                Console.WriteLine("Нажмите 'q' для выхода или любую другую клавишу для продолжения.");
+                Console.WriteLine("\nНажмите 'q' для выхода или любую другую клавишу для продолжения.");
                 if (Console.ReadKey().KeyChar == 'q')
                     continueCalculations = false;
 
                 Console.Clear();
+                Console.WriteLine("Добро пожаловать в калькулятор!");
+                Console.WriteLine($"Текущее значение: {ToPointString(currentValue)}");
+                Console.WriteLine($"Память: {ToPointString(memory)}");
             }
+        }
+
+        private void HandleMemoryOperation(string operation)
+        {
+            switch (operation)
+            {
+                case "M+":
+                    memory += currentValue;
+                    Console.WriteLine($"Добавлено в память: {ToPointString(currentValue)}");
+                    break;
+                case "M-":
+                    memory -= currentValue;
+                    Console.WriteLine($"Вычтено из памяти: {ToPointString(currentValue)}");
+                    break;
+                case "MR":
+                    currentValue = memory;
+                    Console.WriteLine($"Восстановлено из памяти: {ToPointString(memory)}");
+                    break;
+                case "MC":
+                    memory = 0;
+                    Console.WriteLine("Память очищена");
+                    break;
+            }
+        }
+
+        private void HandleBinaryOperation(string operation, double firstNum, double secondNum)
+        {
+            switch (operation)
+            {
+                case "+":
+                    currentValue = firstNum + secondNum;
+                    break;
+                case "-":
+                    currentValue = firstNum - secondNum;
+                    break;
+                case "*":
+                    currentValue = firstNum * secondNum;
+                    break;
+                case "/":
+                    if (secondNum == 0)
+                        throw new DivideByZeroException("деление на ноль");
+                    currentValue = firstNum / secondNum;
+                    break;
+                case "%":
+                    currentValue = firstNum % secondNum;
+                    break;
+                case "^":
+                    currentValue = Math.Pow(firstNum, secondNum);
+                    break;
+                default:
+                    throw new InvalidOperationException("неверная операция");
+            }
+            
+            Console.WriteLine($"Результат: {ToPointString(currentValue)}");
+        }
+
+        public static string ToPointString(double value)
+        {
+            return value.ToString(numberFormatInfo);
+        }
+    }
+
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            Calculator calculator = new Calculator();
+            calculator.Start();
         }
     }
 }
